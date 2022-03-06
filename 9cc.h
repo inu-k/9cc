@@ -15,6 +15,7 @@ typedef enum
   TK_RESERVED,  // 記号
   TK_IDENT,     // 識別子
   TK_NUM,       // 整数トークン
+  TK_RETURN,    // return
   TK_EOF,       // 入力の終わりを表すトークン
 } TokenKind;
 
@@ -31,6 +32,7 @@ struct Token {
 void error(char *fmt, ...);
 void error_at(char *loc, char *fmt, ...);
 bool consume(char *op);
+bool consume_return();
 Token *consume_ident();
 void expect(char *op);
 int expect_number();
@@ -71,6 +73,7 @@ typedef enum
   ND_LE,      // <=
   ND_ASSIGN,  // 代入
   ND_LVAR,    // ローカル変数
+  ND_RETURN,  // return
   ND_NUM,     // 整数
 } NodeKind;
 

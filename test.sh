@@ -48,6 +48,7 @@ assert 0 "1>=2;"
 
 assert 3 "a = 1+2;"
 assert 20 "foo = 10/2; b = 4*foo; b;"
-assert 15 "foo = 1+2; bar = 6-1; foo*bar;"
+assert 15 "foo = 1+2; bar = 6-1; return foo*bar;"
+assert 0 "return 0;"
 
 echo OK
