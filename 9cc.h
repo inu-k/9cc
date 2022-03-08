@@ -31,13 +31,6 @@ struct Token {
 
 void error(char *fmt, ...);
 void error_at(char *loc, char *fmt, ...);
-bool consume(char *op);
-bool consume_return();
-Token *consume_ident();
-void expect(char *op);
-int expect_number();
-bool at_eof();
-Token *new_token(TokenKind kind, Token *cur, char *str, int len);
 Token *tokenize();
 
 // 入力プログラム
@@ -97,5 +90,4 @@ void program();
 // codegen.c
 //
 
-void gen_lval(Node *node);
 void codegen();
